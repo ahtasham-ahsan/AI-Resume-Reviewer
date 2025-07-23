@@ -9,6 +9,7 @@ const schema = z.object({
   sections: z.any().optional(),
   feedback: z.string().optional(),
   suggestions: z.string().optional(),
+  customPrompt: z.string().optional(),  
 });
 
 const builder = new StateGraph(schema)
