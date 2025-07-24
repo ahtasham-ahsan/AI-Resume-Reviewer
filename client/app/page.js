@@ -449,7 +449,7 @@ export default function Home() {
                     <div className="flex items-center justify-center h-full min-h-48 text-gray-400">
                       <div className="text-center">
                         <Brain className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 opacity-50" />
-                        <p className="text-sm sm:text-base">Click "Analyze Resume" to get AI-powered insights</p>
+                        <p className="text-sm sm:text-base">Click &quot;Analyze Resume&quot; to get AI-powered insights</p>
                       </div>
                     </div>
                   )}
