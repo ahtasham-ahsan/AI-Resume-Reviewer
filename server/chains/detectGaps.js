@@ -1,7 +1,7 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { PromptTemplate } from "@langchain/core/prompts";
 
-const defaultPrompt = `You are an expert resume reviewer. Review the resume sections and highlight any gaps or issues that may affect a job application for the position of Human Resource.`;
+const defaultPrompt = `You are an expert resume reviewer. Review the resume sections and highlight any gaps or issues that may affect a job application for any position according to his education and experience.`;
 
 export const detectGaps = async (state) => {
   const llm = new ChatOpenAI({ model: "gpt-4" });

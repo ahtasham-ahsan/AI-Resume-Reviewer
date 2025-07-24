@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 import resumeRoutes from "./routes/resumeRoute.js";
 import fileUpload from "express-fileupload";
 import cors from "cors";
-import path from "path";
-import fs from "fs";
 
 dotenv.config();
 
@@ -16,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
 
+console.log("Hello World");
 app.use("/api/resume", resumeRoutes);
 
 app.listen(PORT, () => {

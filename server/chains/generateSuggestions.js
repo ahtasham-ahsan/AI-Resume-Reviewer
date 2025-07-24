@@ -1,7 +1,7 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { PromptTemplate } from "@langchain/core/prompts";
 
-const defaultPrompt = `The resume will be used to apply for Human Resorce Position. Provide clear and actionable suggestions to improve the resume based on the identified feedback and skills required for the said position.`;
+const defaultPrompt = `Provide clear and actionable suggestions to improve the resume based on the identified feedback and skills required for any position according to his education and experience.`;
 
 export const generateSuggestions = async (state) => {
   const llm = new ChatOpenAI({ model: "gpt-4" });
