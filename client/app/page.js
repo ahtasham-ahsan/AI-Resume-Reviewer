@@ -37,7 +37,7 @@ export default function Home() {
 
     try {
       // const res = await axios.post("http://localhost:5000/api/resume/upload", formData, {
-      const res = await axios.post("https://ai-resume-reviewer-xdz5.onrender.com/api/resume/upload", formData, {
+        const res = await axios.post("https://ai-resume-reviewer-xdz5.onrender.com/api/resume/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -62,6 +62,7 @@ export default function Home() {
     formData.append("resume", file)
     try {
       const res = await axios.post("https://ai-resume-reviewer-xdz5.onrender.com/api/resume/upload", formData, {
+      // const res = await axios.post("http://localhost:5000/api/resume/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -383,6 +384,43 @@ export default function Home() {
                     )}
                   </div>
                 </div>
+                {/* Skills Comparison Section */}
+                {(result.sections?.Skills || result.sections?.RecommendedSkills) && (
+                  <div className="mt-8 w-full bg-gray-900 border border-gray-700 rounded-lg p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-full">
+                    {/* Extracted Skills */}
+                    <div>
+                      <h4 className="text-base sm:text-lg font-semibold text-white mb-2 flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-blue-400" />
+                        <span>Extracted Skills</span>
+                      </h4>
+                      <ul className="flex flex-wrap gap-2">
+                        {result.sections?.Skills && (Array.isArray(result.sections.Skills)
+                          ? result.sections.Skills.map((skill, idx) => (
+                              <li key={idx} className="bg-blue-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill}</li>
+                            ))
+                          : String(result.sections.Skills).split(/,|\n/).map((skill, idx) => (
+                              <li key={idx} className="bg-blue-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill.trim()}</li>
+                            )))}
+                      </ul>
+                    </div>
+                    {/* Recommended Skills */}
+                    <div>
+                      <h4 className="text-base sm:text-lg font-semibold text-white mb-2 flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <span>Recommended Skills</span>
+                      </h4>
+                      <ul className="flex flex-wrap gap-2">
+                        {result.sections?.RecommendedSkills && (Array.isArray(result.sections.RecommendedSkills)
+                          ? result.sections.RecommendedSkills.map((skill, idx) => (
+                              <li key={idx} className="bg-green-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill}</li>
+                            ))
+                          : String(result.sections.RecommendedSkills).split(/,|\n/).map((skill, idx) => (
+                              <li key={idx} className="bg-green-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill.trim()}</li>
+                            )))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </>
             ) : (
               <div className="bg-gray-800 rounded-lg shadow-xl border border-gray-700 flex flex-col min-h-96 lg:h-auto">
