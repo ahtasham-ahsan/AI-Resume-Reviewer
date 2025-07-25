@@ -1,7 +1,7 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { PromptTemplate } from "@langchain/core/prompts";
 
-const defaultPrompt = `You are an expert resume reviewer. Review the resume sections and highlight any gaps or issues that may affect a job application for any position according to his education and experience.`;
+const defaultPrompt = `You are an expert resume reviewer. Review the resume sections and highlight any gaps or issues that may affect a job application for any position according to his education and experience. Note: Overlap between career (such as jobs or internships) and education can happen, e.g., a person may work or intern during their studies. Do not flag this as an issue.`;
 
 export const detectGaps = async (state) => {
   const llm = new ChatOpenAI({ model: "gpt-4" });

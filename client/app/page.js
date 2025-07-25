@@ -396,11 +396,11 @@ export default function Home() {
                       <ul className="flex flex-wrap gap-2">
                         {result.sections?.Skills && (Array.isArray(result.sections.Skills)
                           ? result.sections.Skills.map((skill, idx) => (
-                              <li key={idx} className="bg-blue-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill}</li>
-                            ))
+                            <li key={idx} className="bg-blue-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill}</li>
+                          ))
                           : String(result.sections.Skills).split(/,|\n/).map((skill, idx) => (
-                              <li key={idx} className="bg-blue-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill.trim()}</li>
-                            )))}
+                            <li key={idx} className="bg-blue-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill.trim()}</li>
+                          )))}
                       </ul>
                     </div>
                     {/* Recommended Skills */}
@@ -412,11 +412,11 @@ export default function Home() {
                       <ul className="flex flex-wrap gap-2">
                         {result.sections?.RecommendedSkills && (Array.isArray(result.sections.RecommendedSkills)
                           ? result.sections.RecommendedSkills.map((skill, idx) => (
-                              <li key={idx} className="bg-green-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill}</li>
-                            ))
+                            <li key={idx} className="bg-green-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill}</li>
+                          ))
                           : String(result.sections.RecommendedSkills).split(/,|\n/).map((skill, idx) => (
-                              <li key={idx} className="bg-green-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill.trim()}</li>
-                            )))}
+                            <li key={idx} className="bg-green-700 text-white px-3 py-1 rounded-full text-xs sm:text-sm">{skill.trim()}</li>
+                          )))}
                       </ul>
                     </div>
                   </div>
